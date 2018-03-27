@@ -1,6 +1,7 @@
 ## Spring Data Neo4j Movies in Scala
 This is a recreation of the [SDN Movies example](https://github.com/neo4j-examples/movies-java-spring-data-neo4j), Scala style.
 
+Run via `sbt run`
 
 #### Problems
 When the `id` field on `Movie.scala` is a `java.lang.Long`, as it should be, hitting `/movies/` gives the following stacktrace:
