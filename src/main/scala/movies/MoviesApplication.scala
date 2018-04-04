@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration
 
-
 @SpringBootApplication
 class MoviesApplication {
     @Autowired
