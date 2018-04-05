@@ -9,11 +9,11 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration
 
 @SpringBootApplication
 class MoviesApplication(var configuration: RepositoryRestConfiguration) {
-    @PostConstruct
-    def config: Unit = this.configuration.exposeIdsFor(classOf[Movie])
+   @PostConstruct
+   def config: Unit = configuration.exposeIdsFor(classOf[Movie])
 }
 
-//@EntityScan(Array("movies"))
+@EntityScan(Array("movies"))
 object MoviesApplication {
    def main(args: Array[String]): Unit = SpringApplication.run(classOf[MoviesApplication])
  }

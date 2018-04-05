@@ -6,11 +6,15 @@ lazy val commonSettings = Seq(
 )
 
 val xml = "org.scala-lang.modules" %% "scala-xml" % "1.1.0"
+
 val neo4jOgmCore = "org.neo4j" % "neo4j-ogm-core" % "3.1.0"
 val neo4jOgmApi = "org.neo4j" % "neo4j-ogm-api" % "3.1.0"
 val neo4jOgmBoltDriver = "org.neo4j" % "neo4j-ogm-bolt-driver" % "3.1.0"
+
 val slf4jLog4j12 = "org.slf4j" % "slf4j-log4j12" % "1.7.25"
+
 val configTypesafe = "com.typesafe" % "config" % "1.3.2"
+
 val fastClasspathScanner = "io.github.lukehutch" % "fast-classpath-scanner" % "2.18.1"
 
 // spring
@@ -22,6 +26,8 @@ val springBootStarterDataRest = "org.springframework.boot" % "spring-boot-starte
 // spring data neo4j
 val springDataNeo4j = "org.springframework.data" % "spring-data-neo4j" % "5.0.5.RELEASE"
 val springDataRestWebMvc = "org.springframework.data" % "spring-data-rest-webmvc" % "3.0.5.RELEASE"
+
+val jacksonJsog = "com.voodoodyne.jackson.jsog" % "jackson-jsog" % "1.1"
 
 lazy val root = (project in file("."))
   .settings(
@@ -41,6 +47,8 @@ lazy val root = (project in file("."))
       springBootStarterDataRest,
 
       springDataNeo4j,
-      springDataRestWebMvc 
+      springDataRestWebMvc,
+      
+      jacksonJsog
     )
   )
