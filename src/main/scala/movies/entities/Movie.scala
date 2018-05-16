@@ -1,5 +1,7 @@
 package movies
+
 import java.util.ArrayList
+import scala.beans.BeanProperty
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import org.neo4j.ogm.annotation.{NodeEntity, Id, GeneratedValue, Property, Relationship}
 import com.voodoodyne.jackson.jsog.JSOGGenerator
@@ -9,13 +11,21 @@ import com.voodoodyne.jackson.jsog.JSOGGenerator
 class Movie {
     @Id
     @GeneratedValue
+    @BeanProperty
     var id: java.lang.Long = _
+
+    @BeanProperty
     var title: String = _
+
+    @BeanProperty
     var released: Int = _
+
+    @BeanProperty
     var tagline: String = _
 
     @JsonIgnoreProperties(Array("movie"))
 	@Relationship(`type` = "ACTED_IN", direction = Relationship.INCOMING)
+    @BeanProperty
 	var roles: ArrayList[Role] = _
     
     def this(title: String, released: Int, tagline: String) {

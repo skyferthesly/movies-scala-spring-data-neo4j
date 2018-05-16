@@ -10,9 +10,6 @@ import scala.collection.JavaConverters._
 class MovieController(val movieRepository: MovieRepository) {
     @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
     def get(@PathVariable id: java.lang.Long) = {
-        var getMovie: Optional[Movie] = movieRepository.findById(id)
-        var movie: Movie = getMovie.get
-        println(movie.title)
-        movie
+        movieRepository.findById(id).get
     }
 }
