@@ -4,16 +4,12 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import javax.annotation.PostConstruct
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration
+import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories
 
 @SpringBootApplication
-class MoviesApplication(var configuration: RepositoryRestConfiguration) {
-   @PostConstruct
-   def config: Unit = configuration.exposeIdsFor(classOf[Movie])
-}
+@EnableNeo4jRepositories(Array("movies"))
+class MoviesApplication
 
-@EntityScan(Array("movies"))
 object MoviesApplication {
    def main(args: Array[String]): Unit = SpringApplication.run(classOf[MoviesApplication])
  }
